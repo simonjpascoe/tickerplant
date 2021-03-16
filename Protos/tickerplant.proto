@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tp;
+
+// The greeting service definition.
+service TickerPlant {
+  rpc Subscribe (SubscriptionRequest) returns (stream TickMessage);
+}
+
+// The request message containing the user's name.
+message SubscriptionRequest {
+  string ticker = 1;
+}
+
+// The response message containing the greetings.
+message TickMessage {
+  string ticker = 1;
+  double value = 2;
+}
